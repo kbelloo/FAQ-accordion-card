@@ -5,100 +5,294 @@ body {
     box-sizing: border-box;
     font-size: 12px;
     font-family: 'Kumbh Sans', sans-serif;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-    display: grid;
-    justify-content: center;
-    align-content: center;
-
-}
-
-.question {
-    
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.question img {
-    
-    align-self: center;
-}
-
-.question_title {
-
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin: 1.4rem 0;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat center center fixed;
     color: hsl(237, 12%, 33%);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    overflow-x: hidden;
+
 }
 
 
 .container {
 
+    width: 90%;
+    max-width: 23rem;
+    margin: 10rem auto 5rem;
+    padding: 1.25rem 2rem 3rem;
     background: #fff;
-    border-radius: 30px;
-    height: 509px;
-    width: 920px;
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    grid-gap: 6rem;
-    background-image: url(/images/bg-pattern-desktop.svg);
-    background-repeat: no-repeat;
-    background-position: 1260% 65%;
-
-}
-
-.answer {
-
-    display: none;
-}
-
-.faq_container {
-
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-}
-
-.faq_section {
-
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.faq_qa {
-
-    width: 350px;
-    border-bottom: 1px solid hsl(240, 5%, 91%);
+    border-radius: 1rem;
 }
 
 .faq_title {
 
-    font-size: 2rem;
-    margin-top: 0;
+    text-align: center;
+    padding: 0 0 7.5%;
+    color: hsl(238, 29%, 16%);
+    font-weight: 700;
+}
+
+.question {
+
+    display: inline-block;
+    width: 100%;
+    padding: 5% 0;
+    border-bottom: 0.1rem solid hsl(240, 5%, 91%);
+    font-size: 0.825rem;
+    line-height: 1rem;
+    cursor: pointer;
+    outline: none;
+    text-align: justify;
 
 }
 
-.image_container {
-    
+.question:active {
+
+    color: hsl(14, 88%, 65%);
+}
+
+.question img {
+
+    float: right;
+    padding-top: 1.5%;
+}
+
+.image_mobile {
+
     position: relative;
+    height: 8rem;
+    width: 100%;
 }
 
-.inner_image {
-    
-    background: url(/images/illustration-woman-online-desktop.svg);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: 120% center; 
-}
+.image_mobile .woman {
 
-.box {
-    
     position: absolute;
-    top: 42%;
-    left: -25%;
+    top: -100%;
+    left: 45%;
+    transform: translateX(-50%);
+    z-index: 1;
+
 }
+
+.images_mobile .pattern {
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image_desktop {
+    display: none;
+    position: relative;
+    height: 10rem;
+    width: 100%;
+}
+
+.image_desktop .woman-desktop {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.image_desktop .box {
+    position: absolute;
+    top: 35%;
+    left: -2.5%;
+    z-index: 2;
+}
+
+.image_desktop .pattern-desktop {
+    display: none;
+}
+
+.image_desktop .pattern-mobile {
+    width: 32.5rem;
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box-on-edge {
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.upload-answer,
+.reset-answer,
+.support-answer,
+.cancel-answer,
+.invite-answer {
+
+    display: none;
+    color: hsl(240, 6%, 50%);
+    margin-top: 2.5%;
+    font-weight: 400;
+    line-height: 1.15rem;
+    font-size: 0.75rem;
+}
+
+
+:checked + .invite-answer,
+:checked + .upload-answer,
+:checked + .reset-answer,
+:checked + .support-answer,
+:checked + .cancel-answer {
+
+    display: block;
+}
+
+.question-font-weight {
+    font-weight: 700;
+    color: hsl(238, 29%, 16%);
+}
+
+.rotate-img {
+    transform: rotate(180deg);
+}
+
+/*------------
+    Media Queries
+    -------------*/
+
+@media only screen and (min-width: 700px) {
+    
+    .container {
+        
+        width: 90%;
+        max-width: 40rem;
+        margin-top: 17.5rem;
+    }
+
+    .image_mobile {
+        
+        display: none;
+    }
+
+    .image_desktop {
+        
+        display: block;
+    }
+
+    .faq_title {
+        
+        font-size: 2.25rem;
+        padding-top: 5%;
+    }
+
+    .faq_container {
+        
+        width: 80%;
+        margin: 7.5% auto 5%;
+
+    }
+
+    .question {
+        
+        font-size: 0.95rem;
+    }
+
+    .upload-answer,
+    .reset-answer,
+    .support-answer,
+    .cancel-answer,
+    .invite-answer {
+        
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    
+    .container {
+        
+        position: relative;
+        width: 90%;
+        max-width: 65rem;
+        margin: 7.5% auto;
+        padding: 0;
+    }
+
+    .wrapper {
+        
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    
+    .faq_container {
+        
+        width: calc(100% - 2rem);
+        max-width: 25rem;
+        margin: 3rem 0 4.5rem;
+    }
+
+    .question {
+        
+        text-align: left;
+    }
+
+    .faq_title {
+        
+        text-align: left;
+        padding-bottom: 2.5%
+    }
+    
+    .image-desktop .pattern-mobile {
+        
+        display: none;
+    }
+
+    .image_desktop {
+        
+        position: relative;
+    }
+
+    .image_desktop .woman-desktop {
+        
+        position: absolute;
+        top: 70%;
+        left: 30%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    .image_desktop .pattern-desktop {
+        
+        position: absolute;
+        top: -140%;
+        left: -16.5%;
+        transform: translateX(-50%);
+        display: block;
+    }
+
+    .image_desktop .box {
+        
+        display: none;
+    }
+
+    .box-on-edge {
+        
+        display: block;
+        position: absolute;
+        top: 15.25rem;
+        left: -5.75rem;
+        z-index: 2;
+    }
+    
+    .wrapper-hide {
+        
+        overflow: hidden;
+    }

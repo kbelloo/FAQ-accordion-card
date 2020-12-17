@@ -32,88 +32,113 @@
 
     <main class="container">
 
-        <div class="image_container">
+        <div class="image_mobile">
 
-            <div class="inner_image">
+            <img src="images/illustration-woman-online-mobile.svg" alt="woman standing" class="woman">
 
-            </div>
-
-            <img src="images/illustration-box-desktop.svg" alt="box" class="box">
+            <img src="images/bg-pattern-mobile.svg" alt="shadow" class="pattern">
 
         </div>
 
-        <div class="faq_container">
+        <div class="wrapper">
+            <div class="wrapper-hide">
+                <div class="image_desktop">
+                    <div class="woman-desktop">
+                        <img src="images/illustration-woman-online-desktop.svg" alt="woman standing">
+                        <div class="box">
+                            <img src="images/illustration-box-desktop.svg" alt="a box">
+                        </div>
 
-            <h1 class="faq_title">FAQ</h1>
-
-            <div class="faq_section">
-
-                <div class="faq_qa">
-
-                    <div class="question">
-                        <h3 class="question_title">How many team members can I invite?</h3>
-                        <img src="images/icon-arrow-down.svg" alt="down arrow">
                     </div>
 
-                    <div class="answer">
-                        <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
-                    </div>
+                    <img src="images/bg-pattern-mobile.svg" alt="shadow" class="pattern-mobile">
 
-                </div>
-
-                <div class="faq_qa">
-
-                    <div class="question">
-                        <h3 class="question_title">What is the maximum file upload size?</h3>
-                        <img src="images/icon-arrow-down.svg" alt="down arrow">
-                    </div>
-
-                    <div class="answer">
-                        <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
-                    </div>
-
-                </div>
-
-                <div class="faq_qa">
-
-                    <div class="question">
-                        <h3 class="question_title">How do I reset my password?</h3>
-                        <img src="images/icon-arrow-down.svg" alt="down arrow">
-                    </div>
-
-                    <div class="answer">
-                        <p>Click “Forgot password” from the login page or “Change password” from you profile page. A reset link will be emailed to you.</p>
-                    </div>
-
-                </div>
-
-                <div class="faq_qa">
-
-                    <div class="question">
-                        <h3 class="question_title">Can I cancel my subscription?</h3>
-                        <img src="images/icon-arrow-down.svg" alt="down arrow">
-                    </div>
-
-                    <div class="answer">
-                        <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
-                    </div>
-
-                </div>
-
-                <div class="faq_qa">
-
-                    <div class="question">
-                        <h3 class="question_title">Do you provide additional support?</h3>
-                        <img src="images/icon-arrow-down.svg" alt="down arrow">
-                    </div>
-
-                    <div class="answer">
-                        <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
-                    </div>
+                    <img src="images/bg-pattern-desktop.svg" alt="shadow" class="pattern-desktop">
 
                 </div>
 
             </div>
+
+            <div class="faq_container">
+                <h1 class="faq_title">FAQ</h1>
+
+                <div onclick="tryAgain('.invite-question', '.invite-img')">
+
+                    <label for="invite-input" class="question invite-question" tabindex="1">How many team members can I invite?
+
+                        <img src="images/icon-arrow-down.svg" alt="icon arrow down" class="invite-img">
+
+                        <input type="checkbox" id="invite-input">
+
+                        <span class="invite-answer">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</span>
+
+                    </label>
+
+                </div>
+
+                <div onclick="tryAgain('.upload-question', '.upload-img')">
+
+                    <label for="upload-input" class="question upload-question question-font-weight" tabindex="1">What is the maximum file upload size?
+
+                        <img src="images/icon-arrow-down.svg" alt="icon arrow down" class="upload-img">
+
+                        <input type="checkbox" id="upload-input" checked="checked" />
+
+                        <span class="upload-answer">No more than 2GB. All files in your account must fit your allotted storage space.</span>
+
+                    </label>
+
+                </div>
+
+                <div onclick="tryAgain('.reset-question', '.reset-img')">
+
+                    <label for="reset-input" class="question reset-question" tabindex="1">How do I reset my password?
+
+                        <img src="images/icon-arrow-down.svg" alt="icon arrow down" class="reset-img">
+
+                        <input type="checkbox" id="reset-input" />
+
+                        <span class="reset-answer">Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</span>
+
+                    </label>
+
+                </div>
+
+                <div onclick="tryAgain('.cancel-question', '.cancel-img')">
+
+                    <label for="cancel-input" class="question cancel-question" tabindex="1">Can I cancel my subscription?
+
+                        <img src="images/icon-arrow-down.svg" alt="icon arrow down" class="cancel-img">
+
+                        <input type="checkbox" id="cancel-input" />
+
+                        <span class="cancel-answer">Yes! Send us a message and we’ll process your request no questions asked.</span>
+
+                    </label>
+
+                </div>
+
+                <div onclick="tryAgain('.support-question', '.support-img')">
+
+                    <label for="support-input" class="question support-question" tabindex="1">Do you provide additional support?
+
+                        <img src="images/icon-arrow-down.svg" alt="icon arrow down" class="support-img">
+
+                        <input type="checkbox" id="support-input" />
+
+                        <span class="support-answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="box-on-edge">
+
+            <img src="images/illustration-box-desktop.svg" alt="box">
 
         </div>
 
@@ -125,14 +150,12 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="#">Bello Khalid</a>.
     </div>
-    
+
 
 
     <script src="js/main.js"></script>
 
-</body>
-
-</html>
+</body></html>
 
 
 <!--
